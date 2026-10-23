@@ -1,0 +1,302 @@
+{
+  // Live Sass Compiler
+  "liveSassCompile.settings.formats": [{
+    "format": "expanded", // 出力されるCSSの形式。"expanded"は通常の読みやすい形式。"compressed"は圧縮された形式。
+    "extensionName": ".css", // 出力されるファイルの拡張子。通常は.css。
+    "savePath": "~/../css" // .scssファイルからの相対的な出力先のフォルダを指定。nullだと同階層、'/'はルートディレクトリを意味する。
+  }],
+  "liveSassCompile.settings.autoprefix": [
+    "> 0.5%", // 全体のユーザーの0.5%以上が使用しているブラウザバージョンに対応
+    "last 3 versions", // 各ブラウザの最新3バージョンに対応
+    "not dead" // 2年以上更新されていないブラウザは対象外
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "/.vscode/**" // .vscodeフォルダ内のすべてのファイルやサブフォルダをコンパイルから除外
+  ],
+  "liveSassCompile.settings.generateMap": false, // ソースマップ(.map)ファイルの生成を無効にする。
+  "liveSassCompile.settings.compileOnWatch": false, // ファイルの変更を監視して自動的にコンパイルするかどうかを設定。falseは監視しない。
+  "liveSassCompile.settings.forceBaseDirectory": "/src/sass", // Sassファイルの基準ディレクトリを強制的に設定。これにより、相対パスの解決がこのディレクトリを基準に行われる。
+
+  // Live Server
+  "liveServer.settings.port": 5500, // Live Serverが使用するポート番号を指定。デフォルトは5500。
+  "liveServer.settings.CustomBrowser": "microsoft-edge", // Live Serverで使用するブラウザを指定。ここではMicrosoft Edgeを指定。
+  "liveServer.settings.root": "/htdocs/", // Live Serverのルートディレクトリを指定。ここではhtdocsフォルダをルートとして設定。
+
+  // 言語別フォーマッタ
+  "[html]": {
+    "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // HTMLファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // CSSファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
+    "editor.formatOnSave": false, // 保存時整形しない。
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // JavaScriptファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // SCSSファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
+    "editor.formatOnSave": true, // 保存時整形する。
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "other": "on",
+      "strings": "on",
+    }
+  },
+
+  // Beautify
+  "beautify.config": {
+    "css": {
+      "allowed_file_extensions": [
+        "css",
+        "scss",
+        "sass",
+        "less",
+      ], // Beautifyが整形対象とするファイル拡張子のリスト。ここではCSS、SCSS、SASS、LESSが対象。
+      "end_with_newline" : false, // 整形後にファイルの最後に改行を追加するかどうかを設定。falseは追加しない。
+      "indent_char": " ", // インデントに使用する文字を指定。ここではスペースを使用。
+      "indent_size": 2, // インデントのサイズを指定。ここでは2スペース。
+      "indent_with_tabs": false, // インデントにタブを使用するかどうかを設定。falseはスペースを使用。
+      "max_preserve_newlines": 0, // 連続する改行の最大数を指定。0は改行を保持しない。
+      "newline_between_rules": false, // CSSルール間に改行を挿入するかどうかを設定。falseは挿入しない。
+      "preserve_newlines": false, // 既存の改行を保持するかどうかを設定。falseは保持しない。
+      "selector_separator_newline": false, // CSSセレクタの区切り文字の後に改行を挿入するかどうかを設定。falseは挿入しない。
+    },
+    "html": {
+      "brace_style": "collapse", // 中括弧のスタイルを指定。ここでは「collapse」を使用し、開き中括弧と閉じ中括弧を同じ行に配置。
+      "break_chained_methods": false, // チェーンメソッドの改行を挿入するかどうかを設定。falseは挿入しない。
+      "comma_first": false, // 配列やオブジェクトの要素の前にカンマを置くかどうかを設定。falseはカンマを後ろに置く。
+      "e4x": false, // E4X（ECMAScript for XML）構文をサポートするかどうかを設定。falseはサポートしない。
+      "end_with_newline" : false, // 整形後にファイルの最後に改行を追加するかどうかを設定。falseは追加しない。
+      "eol": "\n", // 改行コードを指定。ここではLF（\n）を使用。
+      "extra_liners": [], // 特定のタグの後に追加の改行を挿入するかどうかを設定。空の配列は挿入しない。
+      "indent_body_inner_html": false, // <body>タグ内のHTMLをインデントするかどうかを設定。falseはインデントしない。
+      "indent_char": " ", // インデントに使用する文字を指定。ここではスペースを使用。
+      "indent_empty_lines": false, // 空行をインデントするかどうかを設定。falseはインデントしない。
+      "indent_head_inner_html": false, // <head>タグ内のHTMLをインデントするかどうかを設定。falseはインデントしない。
+      "indent_inner_html": false, // 内部HTMLをインデントするかどうかを設定。falseはインデントしない。
+      "indent_scripts": "keep",  // <script>タグ内のコードのインデント方法を指定。ここでは「keep」を使用し、既存のインデントを保持。
+      "indent_size": 2,  // インデントのサイズを指定。ここでは2スペース。
+      "indent_with_tabs": false, // インデントにタブを使用するかどうかを設定。falseはスペースを使用。
+      "jslint_happy": false, // JSLintの「happy」モードを有効にするかどうかを設定。falseは無効。
+      "keep_array_indentation": false, // 配列のインデントを保持するかどうかを設定。falseは保持しない。
+      "max_preserve_newlines": 0, // 連続する改行の最大数を指定。0は改行を保持しない。
+      "preserve_newlines": true, // 既存の改行を保持するかどうかを設定。trueは保持する。
+      "space_before_conditional": false, // 条件式の前にスペースを挿入するかどうかを設定。falseは挿入しない。
+      "unescape_strings": false, // 文字列内のエスケープ文字をアンエスケープするかどうかを設定。falseはアンエスケープしない。
+      "unformatted": [
+        "code",
+        "noscript",
+        "pre",
+        "script",
+        "textarea",
+      ], // 整形しないタグのリスト。ここではcode、noscript、pre、script、textareaが対象。
+      "wrap_attributes": "auto", // 属性の折り返し方法を指定。ここでは「auto」を使用し、必要に応じて折り返す。
+      "wrap_line_length": 0, // 行の最大長を指定。0は折り返しなし。
+    },
+    "js": {
+      "brace_style": "collapse", // 中括弧のスタイルを指定。ここでは「collapse」を使用し、開き中括弧と閉じ中括弧を同じ行に配置。
+      "break_chained_methods": false, // チェーンメソッドの改行を挿入するかどうかを設定。falseは挿入しない。
+      "comma_first": false, // 配列やオブジェクトの要素の前にカンマを置くかどうかを設定。falseはカンマを後ろに置く。
+      "end_with_newline" : false, // 整形後にファイルの最後に改行を追加するかどうかを設定。falseは追加しない。
+      "indent_char": " ", // インデントに使用する文字を指定。ここではスペースを使用。
+      "indent_level": 0, // インデントのレベルを指定。0はインデントなし。
+      "indent_size": 2,  // インデントのサイズを指定。ここでは2スペース。
+      "indent_with_tabs": false, // インデントにタブを使用するかどうかを設定。falseはスペースを使用。
+      "keep_array_indentation": false, // 配列のインデントを保持するかどうかを設定。falseは保持しない。
+      "keep_function_indentation": true, // 関数のインデントを保持するかどうかを設定。trueは保持する。
+      "preserve_newlines": true, // 既存の改行を保持するかどうかを設定。trueは保持する。
+      "space_after_anon_function": true, // 匿名関数の後にスペースを挿入するかどうかを設定。trueは挿入する。
+      "space_before_conditional": true, // 条件式の前にスペースを挿入するかどうかを設定。trueは挿入する。
+      "space_in_paren": false, // 丸括弧内のスペースを挿入するかどうかを設定。falseは挿入しない。
+      "unescape_strings": false, // 文字列内のエスケープ文字をアンエスケープするかどうかを設定。falseはアンエスケープしない。
+      "wrap_line_length": 0, // 行の最大長を指定。0は折り返しなし。
+    }
+  },
+  "beautify.language": {
+    "js": {
+      "type": [
+        "javascript",
+        "json",
+      ],
+      "filename": [
+        ".jshintrc",
+        ".jsbeautifyrc",
+      ]
+    },
+    "css": [
+      "css",
+      "scss",
+    ],
+    "html": [
+      "htm",
+      "html",
+    ]
+  }, // Beautifyの対象言語を指定。ここではJavaScript、JSON、CSS、SCSS、HTMLが対象。
+
+  // Commit Message Editor
+  "commit-message-editor.dynamicTemplate": [
+    "{接頭辞}{タイトル}",
+    "",
+    "{本文}",
+    "",
+    "{補足情報}",
+  ], // コミットメッセージの動的テンプレートを設定。コミット時にユーザーが入力する内容に応じて、接頭辞、タイトル、本文、補足情報が自動的に挿入される。
+  "commit-message-editor.staticTemplate": [
+    "{接頭辞}{タイトル}",
+    "",
+    "{本文}",
+    "",
+    "{補足情報}",
+  ], // コミットメッセージの静的テンプレートを設定。コミット時にユーザーが入力する内容に応じて、接頭辞、タイトル、本文、補足情報が自動的に挿入される。
+  "commit-message-editor.tokens": [
+    {
+      "description": "そのコミットで何をしたのか、まずは短く表します",
+      "label": "接頭辞",
+      "name": "接頭辞",
+      "type": "enum",
+      "options": [
+        {
+          "label": "---",
+          "value": ""
+        },
+        {
+          "label": "[追加]",
+          "description": "機能やファイルなどを新しく追加します"
+        },
+        {
+          "label": "[更新]",
+          "description": "既存の機能やファイルなどを更新します"
+        },
+        {
+          "label": "[修正]",
+          "description": "コードなどを修正します"
+        },
+        {
+          "label": "[改善]",
+          "description": "コードを改善します とくに修正依頼や指摘事項がない場合の変更です"
+        },
+        {
+          "label": "[調査]",
+          "description": "不具合や問題の原因調査、一時的な表示確認用ファイルなどに使用します"
+        },
+        {
+          "label": "[削除]",
+          "description": "ファイルを削除します"
+        },
+        {
+          "label": "[設定]",
+          "description": "開発環境の設定を変更します"
+        },
+        {
+          "label": "[改名]",
+          "description": "ファイル名を変更します"
+        },
+        {
+          "label": "[移動]",
+          "description": "ファイルを移動します"
+        },
+      ],
+    }, // コミットメッセージの接頭辞を設定。ユーザーが選択できるオプションとして、追加、更新、修正、改善、調査、削除、設定、改名、移動などが用意されている。
+    {
+      "label": "タイトル",
+      "name": "タイトル",
+      "description": "そのコミットで何をしたのか、短い文章にします",
+      "type": "text",
+      "multiline": false,
+    }, // コミットメッセージのタイトルを設定。ユーザーが入力する短い文章で、コミットの内容を簡潔に表す。
+    {
+      "label": "本文",
+      "name": "本文",
+      "description": "なぜそれをしたのかという理由を記載します",
+      "type": "text",
+      "multiline": true,
+      "lines": 5,
+      "maxLines": 10,
+    }, // コミットメッセージの本文を設定。ユーザーが入力する理由や詳細な説明を記載するためのテキストフィールドで、複数行の入力が可能。
+    {
+      "label": "補足情報",
+      "name": "補足情報",
+      "description": "補足情報を載せます",
+      "type": "text",
+      "multiline": true,
+    }, // コミットメッセージの補足情報を設定。ユーザーが入力する追加の情報や注意事項を記載するためのテキストフィールドで、複数行の入力が可能。
+  ],
+
+  // Editor
+  "diffEditor.ignoreTrimWhitespace": false, // 差分エディタで空白のトリミングを無視するかどうかを設定。falseは無視しない。
+  "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // デフォルトのコード整形ツールとして、Beautify拡張機能を使用するように設定。
+  "editor.dragAndDrop": false, // 選択した部分のドラッグアンドドロップを許可するかどうかを設定。falseは許可しない。
+  "editor.formatOnPaste": true, // 貼り付け時整形
+  "editor.formatOnSave": false, // 保存時整形しない
+  "editor.guides.bracketPairs": true, // 括弧ガイド表示
+  "editor.mouseWheelZoom": true, // Ctrl+ホイールでズーム
+  "editor.renderWhitespace": "all", // 空白を可視化
+  "editor.tabSize": 2, // タブ幅2
+  "editor.wordWrap": "on", // 自動折り返し
+
+  // Emmet
+  "emmet.triggerExpansionOnTab": true, // TabでEmmet展開
+  "emmet.variables": {
+    "lang": "ja", // Emmetの変数langを日本語に設定
+  },
+
+  // Explorer
+  "explorer.compactFolders": false, // フォルダ圧縮表示しない
+
+  // Files
+  "files.autoGuessEncoding": true, // 文字コード自動判定
+  "files.eol": "\n", // LF改行
+
+  // Files Exclude
+  "files.exclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.history/**": true,
+    "**/.ipynb_checkpoints/**": true,
+    "**/backup/**": true,
+    "**/node_modules/**": true,
+    "**/wp-admin/**": true,
+    "**/wp-content/languages/**": true,
+    "**/wp-content/plugins/**": true,
+    "**/wp-content/uploads/**": true,
+    "**/wp-includes/**": true,
+  }, // VSCodeのファイルツリーから非表示
+
+  // Files Watcher
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.history/**": true,
+    "**/.ipynb_checkpoints/**": true,
+    "**/backup/**": true,
+    "**/node_modules/**": true,
+    "**/wp-admin/**": true,
+    "**/wp-content/languages/**": true,
+    "**/wp-content/plugins/**": true,
+    "**/wp-includes/**": true,
+  }, // VSCodeのファイル変更監視から除外
+
+  // Git
+  "git-graph.repository.showRemoteHeads": false, // Git Graphでリモートのブランチを非表示
+  "git.autofetch": true, // Gitの自動フェッチを有効
+  "git.openRepositoryInParentFolders": "never", // 親フォルダのリポジトリを開かない
+  "git.suggestSmartCommit": false, // Smart Commitを提案しない
+
+  // SCSS
+  "scss.hover.documentation": false, // ホバー説明非表示
+  "scss.hover.references": false, // 参照情報非表示
+
+  // 検索
+  "search.exclude": {}, // 検索から除外するパターンを指定。ここでは空のオブジェクトを指定しており、検索から除外するパターンは設定されていない。
+
+  // ターミナル
+  "terminal.integrated.defaultProfile.windows": "Git Bash", // Git Bashを既定ターミナルにする
+
+  // Workbench
+  "workbench.browser.openLocalhostLinks": false, // localhostリンクを自動で開かない
+  "workbench.editor.empty.hint": "hidden", // タブ未選択時のヒント非表示
+  "workbench.editorAssociations": {
+    "*.svg": "default",
+  }, // svgを通常エディタで開く
+  "workbench.startupEditor": "none", // 起動時にWelcomeページを表示しない
+}
