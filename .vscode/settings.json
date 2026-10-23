@@ -79,7 +79,7 @@
       "indent_with_tabs": false, // インデントにタブを使用するかどうかを設定。falseはスペースを使用。
       "jslint_happy": false, // JSLintの「happy」モードを有効にするかどうかを設定。falseは無効。
       "keep_array_indentation": false, // 配列のインデントを保持するかどうかを設定。falseは保持しない。
-      "max_preserve_newlines": 0, // 連続する改行の最大数を指定。0は改行を保持しない。
+      "max_preserve_newlines": 1, // 連続する改行の最大数を指定。0は改行を保持しない。
       "preserve_newlines": true, // 既存の改行を保持するかどうかを設定。trueは保持する。
       "space_before_conditional": false, // 条件式の前にスペースを挿入するかどうかを設定。falseは挿入しない。
       "unescape_strings": false, // 文字列内のエスケープ文字をアンエスケープするかどうかを設定。falseはアンエスケープしない。
