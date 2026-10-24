@@ -10,5 +10,5 @@ async function insertCommonParts(path, id) {
   document.getElementById(id).innerHTML = html;
 }
 
-insertCommonParts("/common/header.html", "header");
-insertCommonParts("/common/footer.html", "footer");
+insertCommonParts("/rat-life/common/header.html", "header");
+insertCommonParts("/rat-life/common/footer.html", "footer");
