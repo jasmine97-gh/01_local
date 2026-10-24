@@ -11,11 +11,11 @@
     "not dead" // 2年以上更新されていないブラウザは対象外
   ],
   "liveSassCompile.settings.excludeList": [
-    "/rat-life/.vscode/**" // .vscodeフォルダ内のすべてのファイルやサブフォルダをコンパイルから除外
+    "/rat-days/.vscode/**" // .vscodeフォルダ内のすべてのファイルやサブフォルダをコンパイルから除外
   ],
   "liveSassCompile.settings.generateMap": false, // ソースマップ(.map)ファイルの生成を無効にする。
   "liveSassCompile.settings.compileOnWatch": false, // ファイルの変更を監視して自動的にコンパイルするかどうかを設定。falseは監視しない。
-  "liveSassCompile.settings.forceBaseDirectory": "/rat-life/src/sass", // Sassファイルの基準ディレクトリを強制的に設定。これにより、相対パスの解決がこのディレクトリを基準に行われる。
+  "liveSassCompile.settings.forceBaseDirectory": "/rat-days/src/sass", // Sassファイルの基準ディレクトリを強制的に設定。これにより、相対パスの解決がこのディレクトリを基準に行われる。
 
   // Live Server
   "liveServer.settings.port": 5500, // Live Serverが使用するポート番号を指定。デフォルトは5500。
