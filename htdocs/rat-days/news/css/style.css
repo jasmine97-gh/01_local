@@ -309,6 +309,7 @@ button {
 }
 .article__wrap .article__head .subtitle {
   text-align: right;
+  line-height: 1.5;
 }
 @media (min-width: 768px) {
   .article__wrap .article__head .subtitle {
@@ -360,7 +361,7 @@ button {
 }
 @media (max-width: 767px) {
   .article__wrap .article__body .contents__wrap .contents__block {
-    gap: calc(var(--vw) * 10);
+    gap: calc(var(--vw) * 20);
   }
 }
 .article__wrap .article__body .contents__wrap .contents__block .contents__h2-title {
@@ -389,8 +390,9 @@ button {
 }
 @media (max-width: 767px) {
   .article__wrap .article__body .contents__wrap .contents__block .contents__text {
-    gap: calc(var(--vw) * 10);
+    gap: calc(var(--vw) * 20);
     font-size: clamp(14px, var(--vw) * 32, 16px);
+    line-height: 1.5;
   }
 }
 .article__wrap .article__body .contents__wrap .contents__block .contents__img {
