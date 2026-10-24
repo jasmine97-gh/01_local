@@ -18,17 +18,27 @@
 <body>
 <div id="header"></div>
 
-<div class="wrap">
+<div class="article__wrap">
   <main>
     <article>
-      <div class="head">
-        <p class="category c-blue">=====category=====</p>
-        <h1 class="title">=====title=====</h1>
-        <p class="subtitle">=====subtitle=====</p>
-        <p class="date"><time datetime="2026-mm-dd">2026/mm/dd</p>
+      <div class="article__head">
+        <div class="category__wrap">
+          <div class="category">
+            <p>=====category=====</p>
+          </div>
+        </div>
+        <div class="title">
+          <h1>=====title=====</h1>
+        </div>
+        <div class="subtitle">
+          <p>=====subtitle=====</p>
+        </div>
+        <div class="date">
+          <p><time datetime="2026-mm-dd">2026/mm/dd</time></p>
+        </div>
       </div>
 
-      <div class="body">
+      <div class="article__body">
         <div class="contents__wrap">
           <section class="contents__block">
             <h2 class="contents__h2-title">テキストテキストテキスト</h2>
@@ -38,7 +48,8 @@
               <p>テキストテキストテキスト</p>
             </div>
             <div class="contents__img">
-              <img src="https://placehold.co/900x600/3478F6/FFFFFF.png" alt="">
+              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400"
+               loading="lazy">
             </div>
           </section>
 
@@ -50,7 +61,7 @@
               <p>テキストテキストテキスト</p>
             </div>
             <div class="contents__img">
-              <img src="https://placehold.co/900x600/3478F6/FFFFFF.png" alt="">
+              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
             </div>
           </section>
 
@@ -62,13 +73,13 @@
               <p>テキストテキストテキスト</p>
             </div>
             <div class="contents__img">
-              <img src="https://placehold.co/900x600/3478F6/FFFFFF.png" alt="">
+              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
             </div>
           </section>
         </div>
       </div>
 
-      <div class="bottom"></div>
+      <div class="article__bottom"></div>
     </article>
   </main>
 </div>
