@@ -15,6 +15,7 @@ html {
   --c-sub: #737980;
   --c-accent: #3478F6;
   --c-background: #FFFFFF;
+  --c-sub-background: #F4F7FC;
   --c-border: #E5E7EB;
   --vw: calc(100vw / 750);
 }
@@ -37,7 +38,7 @@ body {
 
 @media (min-width: 768px) {
   body {
-    min-width: 1200px;
+    min-width: 900px;
   }
 }
 main {
@@ -169,4 +170,83 @@ button {
 
 .c-accent {
   color: var(--c-accent);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80px;
+  padding-inline: 50px;
+  background-color: var(--c-sub-background);
+  border-bottom: 1px solid var(--c-border);
+}
+.header .logo {
+  width: 150px;
+}
+
+.wrap {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 30px 50px;
+}
+.wrap .head {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--c-border);
+}
+.wrap .head .category {
+  display: inline-block;
+  padding-inline: 20px;
+  margin-bottom: 10px;
+  border: 1px solid var(--c-border);
+  border-radius: 9999px;
+  font-size: 15px;
+}
+.wrap .head .title {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+.wrap .head .subtitle {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: right;
+}
+.wrap .head .date {
+  font-size: 15px;
+  text-align: right;
+}
+.wrap .body .contents__wrap .contents__block {
+  padding-top: 10px;
+}
+.wrap .body .contents__wrap .contents__block:first-child {
+  padding-top: 0;
+}
+.wrap .body .contents__wrap .contents__block .contents__h2-title {
+  margin-block: 20px 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.wrap .body .contents__wrap .contents__block .contents__text {
+  font-size: 15px;
+}
+.wrap .body .contents__wrap .contents__block .contents__text p {
+  margin-bottom: 15px;
+}
+.wrap .body .contents__wrap .contents__block .contents__text p:last-child {
+  margin-bottom: 0;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 50px;
+  background-color: var(--c-sub-background);
+  border-top: 1px solid var(--c-border);
+}
+.footer .copyright {
+  font-size: 10px;
+  color: var(--c-sub);
+  text-align: center;
 }
