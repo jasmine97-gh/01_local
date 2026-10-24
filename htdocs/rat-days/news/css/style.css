@@ -212,6 +212,14 @@ button {
   border-radius: 9999px;
   font-size: 14px;
 }
+.article__wrap .article__head .category__wrap .category.c-blue {
+  background-color: var(--c-sub-background);
+  color: var(--c-accent);
+}
+.article__wrap .article__head .category__wrap .category.c-pink {
+  background-color: #FCEEF2;
+  color: #C94F75;
+}
 .article__wrap .article__head .title {
   font-size: 40px;
   font-weight: 700;
