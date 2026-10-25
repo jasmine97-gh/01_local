@@ -15,6 +15,7 @@ html {
   --c-sub: #737980;
   --c-accent: #3478F6;
   --c-background: #FFFFFF;
+  --c-sub-background: #F4F7FC;
   --c-border: #E5E7EB;
   --vw: calc(100vw / 750);
 }
@@ -35,16 +36,7 @@ body {
   overflow-wrap: break-word;
 }
 
-@media (min-width: 768px) {
-  body {
-    min-width: 1200px;
-  }
-}
-main {
-  overflow-x: hidden;
-}
-
-a, label, input[type=button], input [type=reset], input [type=submit], button {
+a, label, input[type=button], input[type=reset], input[type=submit], button {
   cursor: pointer;
 }
 
@@ -56,7 +48,7 @@ a {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   vertical-align: top;
   backface-visibility: hidden;
@@ -169,4 +161,94 @@ button {
 
 .c-accent {
   color: var(--c-accent);
+}
+
+@media (min-width: 768px) {
+  #header {
+    min-height: 80px;
+  }
+}
+@media (max-width: 767px) {
+  #header {
+    min-height: calc(var(--vw) * 120);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--c-sub-background);
+  border-bottom: 1px solid var(--c-border);
+}
+@media (min-width: 768px) {
+  .header {
+    height: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    height: calc(var(--vw) * 120);
+    padding-inline: calc(var(--vw) * 50);
+  }
+}
+.header .logo__wrap {
+  width: 100%;
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header .logo__wrap {
+    max-width: 900px;
+    padding-inline: 50px;
+  }
+}
+.header .logo__wrap .logo {
+  display: block;
+  height: auto;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .header .logo__wrap .logo {
+    width: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .header .logo__wrap .logo {
+    width: calc(var(--vw) * 200);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-sub-background);
+  border-top: 1px solid var(--c-border);
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 20px 100px;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: calc(var(--vw) * 40) calc(var(--vw) * 50);
+  }
+}
+.footer .copyright {
+  color: var(--c-sub);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer .copyright {
+    font-size: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .footer .copyright {
+    font-size: clamp(9px, var(--vw) * 20, 10px);
+  }
 }
