@@ -138,7 +138,7 @@ button {
     display: none !important;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .pc-only {
     display: none !important;
   }
@@ -168,7 +168,7 @@ button {
     min-height: 80px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   #header {
     min-height: calc(var(--vw) * 120);
   }
@@ -186,7 +186,7 @@ button {
     height: 80px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .header {
     height: calc(var(--vw) * 120);
     padding-inline: calc(var(--vw) * 50);
@@ -215,7 +215,7 @@ button {
     width: 150px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .header .logo__wrap .logo {
     width: calc(var(--vw) * 200);
   }
@@ -231,7 +231,7 @@ button {
     padding-block: 30px 20px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .breadcrumb {
     padding-block: calc(var(--vw) * 40) calc(var(--vw) * 20);
   }
@@ -248,7 +248,7 @@ button {
     padding-inline: 50px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .breadcrumb .breadcrumb__list {
     padding-inline: calc(var(--vw) * 50);
   }
@@ -263,7 +263,7 @@ button {
     font-size: 14px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .breadcrumb .breadcrumb__list .breadcrumb__item {
     padding-right: calc(var(--vw) * 60);
     font-size: clamp(12px, var(--vw) * 28, 14px);
@@ -284,7 +284,7 @@ button {
     width: 8.1px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .breadcrumb .breadcrumb__list .breadcrumb__item::before, .breadcrumb .breadcrumb__list .breadcrumb__item::after {
     right: calc(var(--vw) * 24);
     width: calc(var(--vw) * 16.2);
@@ -316,7 +316,7 @@ button {
     padding: 20px 100px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .footer {
     padding: calc(var(--vw) * 40) calc(var(--vw) * 50);
   }
@@ -330,7 +330,7 @@ button {
     font-size: 10px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .footer .copyright {
     font-size: clamp(9px, var(--vw) * 20, 10px);
   }
@@ -346,7 +346,7 @@ button {
     padding-inline: 50px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap {
     padding-inline: calc(var(--vw) * 40);
   }
@@ -362,7 +362,7 @@ button {
     padding-bottom: 30px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head {
     gap: calc(var(--vw) * 20);
     padding-bottom: calc(var(--vw) * 40);
@@ -376,7 +376,7 @@ button {
     gap: 10px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head .category__wrap {
     flex-wrap: wrap;
     gap: calc(var(--vw) * 20);
@@ -393,7 +393,7 @@ button {
     font-size: 14px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head .category__wrap .category {
     padding-inline: calc(var(--vw) * 20);
     font-size: clamp(12px, var(--vw) * 28, 14px);
@@ -417,7 +417,7 @@ button {
     font-size: 40px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head .title {
     font-size: clamp(36px, var(--vw) * 80, 40px);
   }
@@ -431,7 +431,7 @@ button {
     font-size: 20px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head .subtitle {
     font-size: clamp(18px, var(--vw) * 40, 20px);
   }
@@ -444,7 +444,7 @@ button {
     font-size: 14px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__head .date {
     font-size: clamp(12px, var(--vw) * 28, 14px);
   }
@@ -459,7 +459,7 @@ button {
     padding-block: 30px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__body .contents__wrap {
     gap: calc(var(--vw) * 20);
     padding-block: calc(var(--vw) * 40);
@@ -474,7 +474,7 @@ button {
     gap: 16px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__body .contents__wrap .contents__block {
     gap: calc(var(--vw) * 20);
   }
@@ -488,7 +488,7 @@ button {
     font-size: 20px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__body .contents__wrap .contents__block .contents__h2-title {
     font-size: clamp(18px, var(--vw) * 40, 20px);
   }
@@ -503,7 +503,7 @@ button {
     font-size: 16px;
   }
 }
-@media (max-width: 767px) {
+@media not (min-width: 768px) {
   .article__wrap .article__body .contents__wrap .contents__block .contents__text {
     gap: calc(var(--vw) * 20);
     font-size: clamp(14px, var(--vw) * 32, 16px);
