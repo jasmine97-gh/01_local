@@ -564,7 +564,7 @@ button {
     font-size: clamp(12px, var(--vw) * 28, 14px);
   }
 }
-.article__wrap .article__nav .nav__list .nav__item.hidden {
+.article__wrap .article__nav .nav__list .nav__item.hidden a {
   display: none;
 }
 .article__wrap .article__nav .nav__list .nav__item .nav__lead {
