@@ -399,6 +399,10 @@ button {
   background-color: #FCEEF2;
   color: #C94F75;
 }
+.article__wrap .article__head .category__wrap .category.c-green {
+  background-color: #EAF6EF;
+  color: #278653;
+}
 .article__wrap .article__head .title {
   font-weight: 700;
   line-height: 1.4;
