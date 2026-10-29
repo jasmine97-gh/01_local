@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>767pxでレイアウトが崩れる問題を解決する | rat days</title>
+<meta name="description" content="=====description=====">
+
+<link rel="icon" href="/rat-days/img/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/rat-days/common/css/reset.css">
+<link rel="stylesheet" href="/rat-days/news/css/style.css">
+</head>
+
+<body>
+<div id="header"></div>
+
+<nav aria-label="パンくずリスト" class="breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
+    <li class="breadcrumb__item"><a href="/rat-days/news/">記事一覧</a></li>
+    <li class="breadcrumb__item" aria-current="page">767pxでレイアウトが崩れる問題を解決する</li>
+  </ol>
+</nav>
+
+<div class="article__wrap">
+  <main>
+    <article>
+      <div class="article__head">
+        <div class="category__wrap">
+          <div class="category c-green">
+            <p>制作日誌</p>
+          </div>
+        </div>
+        <div class="title">
+          <h1>767pxで<wbr />レイアウトが<wbr />崩れる問題を<wbr />解決する</h1>
+        </div>
+        <div class="subtitle">
+          <p>メディアクエリの見直しと、<wbr />新しいCSS構文の採用判断</p>
+        </div>
+        <div class="date">
+          <p><time datetime="2026-10-30">2026/10/30</time></p>
+        </div>
+      </div>
+
+      <div class="article__body">
+        <div class="contents__wrap">
+          <div class="contents__block">
+            <div class="contents__text">
+              <p>先日、rat daysのレスポンシブ対応を進めていたところ、ブラウザの表示幅が767pxになったときに、レイアウトが崩れる問題に直面しました。デスクトップ向けとモバイル向けでスタイルを切り替えるように設定していたにもかかわらず、想定どおりに表示されなかったのです。</p>
+            </div>
+          </div>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">メディアクエリとは</h2>
+            <div class="contents__text">
+              <p>レスポンシブ対応では、画面の幅などの条件に応じてCSSのスタイルを切り替えるために、メディアクエリを使用します。例えば、次のように記述することで、画面幅が768px以上の場合と767px以下の場合で異なるスタイルを適用できます。</p>
+            </div>
+            <div class="contents__code">
+              <div class="contents__code__header">
+                <span class="contents__code__language">CSS</span>
+                <button class="contents__code__copy" type="button">コピー</button>
+              </div>
+              <pre><code class="language-css">/* デスクトップ向け */
+@media (min-width: 768px) {
+  /* 画面幅が768px以上のスタイル */
+}
+
+/* モバイル向け */
+@media (max-width: 767px) {
+  /* 画面幅が767px以下のスタイル */
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">767pxで発生した<wbr />表示崩れ</h2>
+            <div class="contents__text">
+              <p>実際にブラウザの表示幅を調整してみると、767pxのときだけレイアウトが崩れることがわかりました。768pxではPC向けのCSSが、766pxではSP向けのCSSがそれぞれ正常に適用されていたため、767px付近で何らかの問題が発生していると考えられます。</p>
+            </div>
+            <div class="contents__img">
+              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
+            </div>
+            <div class="contents__text">
+              <p>本来であれば、画面幅に応じてPC向けとSP向けのスタイルが適切に切り替わるはずです。しかし、今回はその境界にあたる767pxで正常に表示されず、CSSの記述に問題があるのか、それともブラウザやWindowsの表示設定が関係しているのか、原因はすぐにはわかりませんでした。そこで、まずはオンラインで情報を調べ、自分と同じような問題が起きていないかを確認することにしました。</p>
+            </div>
+          </section>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">オンラインで調べて<wbr />わかったこと</h2>
+            <div class="contents__text">
+              <p>「767pxで表示が崩れる」と検索したところ、teratailに投稿された「<span class="contents__link"><a href="https://teratail.com/questions/109137" target="_blank">サイトのデザインがwidth767pxで崩れるのは何故なのか？</a></span>」という質問を見つけました。自分と同じように767pxでレイアウトが崩れるという内容で、回答を読み進めるうちに、今回の問題にも共通する原因があることに気づきました。</p>
+              <p>原因の一つは、Windowsのディスプレイ設定で拡大縮小率が150%になっていたことです。さらに、この設定が影響してブラウザが扱う表示幅に小数点以下の値が生じ、767px以下と768px以上のメディアクエリのどちらにも該当しない幅が発生していた可能性があるとわかりました。</p>
+              <p>参考ページの投稿者は、Windowsのディスプレイ設定を変更することで問題を解決していました。しかし、表示設定を変更するだけでは、別の環境で同じ問題が起きる可能性が残ります。そこで、表示幅に小数点以下の値が含まれていても適切なスタイルが適用されるように、メディアクエリの指定を書き換えることにしました。</p>
+              <p>その結果、767pxで発生していた表示崩れは解消しましたが、今度はメディアクエリをどのように記述するのが適切なのか、という疑問が残りました。小数点以下の値を考慮して指定する方法や、notを使って条件を指定する方法など、いくつかの選択肢が考えられたため、コーディングの先輩に相談してみることにしました。</p>
+            </div>
+          </section>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">先輩に相談して<wbr />わかったこと</h2>
+            <div class="contents__text">
+              <p>メディアクエリの書き方について相談したところ、先輩から教えてもらったのが、比較演算子（不等号）を使った新しい構文です。従来のmin-widthやmax-widthを使う書き方と比べて、画面幅の条件を直感的に読み取れる点が魅力的です。</p>
+              <p>例えば、比較演算子を使うと、次のように記述できます。</p>
+            </div>
+            <div class="contents__code">
+              <div class="contents__code__header">
+                <span class="contents__code__language">CSS</span>
+                <button class="contents__code__copy" type="button">コピー</button>
+              </div>
+              <pre><code class="language-css">/* デスクトップ向け */
+@media (width >= 768px) {
+  /* 画面幅が768px以上のスタイル */
+}
+
+/* モバイル向け */
+@media (width < 768px) {
+  /* 画面幅が768px未満のスタイル */
+}</code></pre>
+            </div>
+            <div class="contents__text">
+              <p>この書き方なら、条件と適用範囲の関係がひと目でわかります。また、notを使った書き方と比べても、画面幅を3つ以上の範囲に分けたい場合に条件を整理しやすく、記述を簡潔にできる点が優れていると感じました。</p>
+              <p>ぜひ採用したいと思いましたが、気になったのはブラウザの対応状況です。どれほど便利な構文でも、閲覧者のブラウザで動作しなければ意味がありません。新しい技術を取り入れる際には、使いやすさと互換性のバランスを考える必要があります。</p>
+              <p>そこで先輩が教えてくれたのが、「<span class="contents__link"><a href="https://caniuse.com/" target="_blank">Can I use</a></span>」というWebサイトです。このサイトでは、HTMLやCSS、JavaScriptなどの機能について、ブラウザやバージョンごとの対応状況を確認できます。実際に<span class="contents__link"><a href="https://caniuse.com/css-media-range-syntax" target="_blank">Media Queries: Range Syntaxの対応状況</a></span>を開き、比較演算子を使った構文がどのブラウザで利用できるのかを調べてみました。</p>
+            </div>
+          </section>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">ブラウザの<wbr />利用シェアから<wbr />採用を判断する</h2>
+            <div class="contents__text">
+              <p>Can I useでは、各ブラウザの対応状況だけでなく、ブラウザの利用シェアをもとに、機能を利用できる環境がどれくらいあるのかも確認できます。未対応のブラウザが存在していても、その利用シェアが十分に小さければ、新しい構文を採用する判断ができると考えました。</p>
+              <p>比較演算子を使った構文に対応していないのは、Internet Explorerのほか、古いバージョンのChromeやEdge、Safari、Firefoxなどです。一方、同ページの2026年9月時点の統計では、対応ブラウザの日本国内での利用シェアは約94.36%に達していました。</p>
+              <p>この結果から、未対応の環境は残っているものの、rat daysでは比較演算子を使った新しい構文を採用してもよいと判断しました。新しい技術を取り入れるときには、単に便利そうだからという理由だけで決めるのではなく、ブラウザの対応状況や利用シェアを確認したうえで判断することが大切だと学びました。</p>
+            </div>
+          </section>
+
+          <section class="contents__block">
+            <h2 class="contents__h2-title">まとめ</h2>
+            <div class="contents__text">
+              <p>今回の問題は、メディアクエリの指定を見直すことで解決できましたが、調査を進めるなかで、CSSの書き方にも複数の選択肢があることを知りました。特に、比較演算子を使った構文は、条件を直感的に理解しやすく、複数の画面幅に対応する際にも記述を整理しやすい点が魅力的でした。</p>
+              <p>新しい構文を採用するかどうかは、書きやすさだけで決められるものではありません。今回のようにブラウザの対応状況や利用シェアを調べることで、利便性と互換性の両方を考慮した判断ができます。これからも、問題を解決するだけで終わらせず、より読みやすく、保守しやすいコードを書くための方法を学んでいきたいと思います。</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <nav class="article__nav">
+        <ul class="nav__list">
+          <li class="nav__item prev">
+            <a href="/rat-days/news/261025.html">
+              <p class="nav__lead">前の記事</p>
+              <p class="nav__title">「rat days」を<wbr />開設しました</p>
+            </a>
+          </li>
+          <li class="nav__item next hidden">
+            <a href="/rat-days/news/26mmdd.html">
+              <p class="nav__lead">次の記事</p>
+              <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
+            </a>
+          </li>
+        </ul>
+        <div class="nav__button">
+          <a href="/rat-days/news/">
+            <p>記事一覧に戻る</p>
+          </a>
+        </div>
+      </nav>
+    </article>
+  </main>
+</div>
+
+<div id="footer"></div>
+
+<script src="/rat-days/common/js/script.js"></script>
+</body>
+</html>
