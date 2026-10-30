@@ -568,7 +568,7 @@ button {
     font-size: clamp(12px, var(--vw) * 28, 14px);
   }
 }
-.article__wrap .article__nav .nav__list .nav__item.hidden a {
+.article__wrap .article__nav .nav__list .nav__item .hidden {
   display: none;
 }
 .article__wrap .article__nav .nav__list .nav__item .nav__lead {
@@ -604,37 +604,47 @@ button {
   color: var(--c-accent);
   word-break: keep-all;
 }
-.article__wrap .article__nav .nav__list .nav__item.prev {
+.article__wrap .article__nav .nav__list .nav__item .prev {
   text-align: left;
 }
 @media (min-width: 768px) {
-  .article__wrap .article__nav .nav__list .nav__item.prev .nav__lead {
+  .article__wrap .article__nav .nav__list .nav__item .prev {
+    padding-left: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .article__wrap .article__nav .nav__list .nav__item .prev .nav__lead {
     padding-left: 13px;
   }
 }
 @media not (min-width: 768px) {
-  .article__wrap .article__nav .nav__list .nav__item.prev .nav__lead {
+  .article__wrap .article__nav .nav__list .nav__item .prev .nav__lead {
     padding-left: min(var(--vw) * 26, 13px);
   }
 }
-.article__wrap .article__nav .nav__list .nav__item.prev .nav__lead::before, .article__wrap .article__nav .nav__list .nav__item.prev .nav__lead::after {
+.article__wrap .article__nav .nav__list .nav__item .prev .nav__lead::before, .article__wrap .article__nav .nav__list .nav__item .prev .nav__lead::after {
   left: 0;
   transform-origin: left;
 }
-.article__wrap .article__nav .nav__list .nav__item.next {
+.article__wrap .article__nav .nav__list .nav__item .next {
   text-align: right;
 }
 @media (min-width: 768px) {
-  .article__wrap .article__nav .nav__list .nav__item.next .nav__lead {
+  .article__wrap .article__nav .nav__list .nav__item .next {
+    padding-right: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .article__wrap .article__nav .nav__list .nav__item .next .nav__lead {
     padding-right: 13px;
   }
 }
 @media not (min-width: 768px) {
-  .article__wrap .article__nav .nav__list .nav__item.next .nav__lead {
+  .article__wrap .article__nav .nav__list .nav__item .next .nav__lead {
     padding-right: min(var(--vw) * 26, 13px);
   }
 }
-.article__wrap .article__nav .nav__list .nav__item.next .nav__lead::before, .article__wrap .article__nav .nav__list .nav__item.next .nav__lead::after {
+.article__wrap .article__nav .nav__list .nav__item .next .nav__lead::before, .article__wrap .article__nav .nav__list .nav__item .next .nav__lead::after {
   right: 0;
 }
 .article__wrap .article__nav .nav__button {
