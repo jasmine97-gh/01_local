@@ -20,7 +20,7 @@
 <body>
 <div id="header"></div>
 
-<nav aria-label="パンくずリスト" class="breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
     <li class="breadcrumb__item"><a href="/rat-days/news/">お知らせ</a></li>
@@ -89,10 +89,16 @@
             </div>
             <div class="contents__code">
               <div class="contents__code__header">
-                <span class="contents__code__language">=====language=====</span>
+                <div class="contents__code__language">
+                  <span class="language-html">HTML</span>
+                  <span class="language-css">CSS</span>
+                  <span class="language-javascript">JavaScript</span>
+                </div>
                 <button class="contents__code__copy" type="button">コピー</button>
               </div>
-              <pre><code class="language-css">コードコードコード</code></pre>
+              <div class="contents__code__wrap language-css">
+                <pre><code>コードコードコードコードコードコードコードコードコード</code></pre>
+              </div>
             </div>
             <div class="contents__img">
               <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
@@ -101,7 +107,7 @@
         </div>
       </div>
 
-      <nav class="article__nav">
+      <nav class="article__nav" aria-label="記事ナビゲーション">
         <ul class="nav__list">
           <li class="nav__item">
             <div class="prev">

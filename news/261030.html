@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>767pxでレイアウトが崩れる問題を解決する | rat days</title>
-<meta name="description" content="=====description=====">
+<meta name="description" content="ブラウザの表示幅が767pxのときにレイアウトが崩れる問題について、原因を調べた過程と解決方法を紹介します。メディアクエリの基本から、比較演算子を使ったCSS Media Queries Range Syntaxの書き方、採用時に確認したブラウザの対応状況まで解説します。">
 
 <link rel="icon" href="/rat-days/img/favicon.ico">
 
@@ -20,7 +20,7 @@
 <body>
 <div id="header"></div>
 
-<nav aria-label="パンくずリスト" class="breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
     <li class="breadcrumb__item"><a href="/rat-days/news/">記事一覧</a></li>
@@ -52,7 +52,7 @@
         <div class="contents__wrap">
           <div class="contents__block">
             <div class="contents__text">
-              <p>先日、rat daysのレスポンシブ対応を進めていたところ、ブラウザの表示幅が767pxになったときに、レイアウトが崩れる問題に直面しました。デスクトップ向けとモバイル向けでスタイルを切り替えるように設定していたにもかかわらず、想定どおりに表示されなかったのです。</p>
+              <p>先日、rat daysのレスポンシブ対応を進めていたところ、ブラウザの表示幅が767pxのときに、レイアウトが崩れる問題に直面しました。デスクトップ向けとモバイル向けでスタイルを切り替えるように設定していたにもかかわらず、想定どおりに表示されなかったのです。</p>
             </div>
           </div>
 
@@ -63,10 +63,13 @@
             </div>
             <div class="contents__code">
               <div class="contents__code__header">
-                <span class="contents__code__language">CSS</span>
+                <div class="contents__code__language">
+                  <span class="language-css">CSS</span>
+                </div>
                 <button class="contents__code__copy" type="button">コピー</button>
               </div>
-              <pre><code class="language-css">/* デスクトップ向け */
+              <div class="contents__code__wrap language-css">
+                <pre><code>/* デスクトップ向け */
 @media (min-width: 768px) {
   /* 画面幅が768px以上のスタイル */
 }
@@ -75,6 +78,7 @@
 @media (max-width: 767px) {
   /* 画面幅が767px以下のスタイル */
 }</code></pre>
+              </div>
             </div>
           </section>
 
@@ -84,20 +88,20 @@
               <p>実際にブラウザの表示幅を調整してみると、767pxのときだけレイアウトが崩れることがわかりました。768pxではPC向けのCSSが、766pxではSP向けのCSSがそれぞれ正常に適用されていたため、767px付近で何らかの問題が発生していると考えられます。</p>
             </div>
             <div class="contents__img">
-              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
+              <img src="/rat-days/news/img/261030_01.jpg" alt="767pxで表示崩れが発生している画面" width="800" height="400" loading="lazy">
             </div>
             <div class="contents__text">
-              <p>本来であれば、画面幅に応じてPC向けとSP向けのスタイルが適切に切り替わるはずです。しかし、今回はその境界にあたる767pxで正常に表示されず、CSSの記述に問題があるのか、それともブラウザやWindowsの表示設定が関係しているのか、原因はすぐにはわかりませんでした。そこで、まずはオンラインで情報を調べ、自分と同じような問題が起きていないかを確認することにしました。</p>
+              <p>本来であれば、画面幅に応じてPC向けとSP向けのスタイルが適切に切り替わるはずです。しかし、今回はその境界にあたる767pxで正常に表示されませんでした。CSSの記述に問題があるのか、それともブラウザやWindowsの表示設定が関係しているのか、原因がすぐにはわからなかったため、まずはオンラインで情報を調べ、自分と同じような問題が起きていないかを確認することにしました。</p>
             </div>
           </section>
 
           <section class="contents__block">
             <h2 class="contents__h2-title">オンラインで調べて<wbr />わかったこと</h2>
             <div class="contents__text">
-              <p>「767pxで表示が崩れる」と検索したところ、teratailに投稿された「<span class="contents__link"><a href="https://teratail.com/questions/109137" target="_blank">サイトのデザインがwidth767pxで崩れるのは何故なのか？</a></span>」という質問を見つけました。自分と同じように767pxでレイアウトが崩れるという内容で、回答を読み進めるうちに、今回の問題にも共通する原因があることに気づきました。</p>
-              <p>原因の一つは、Windowsのディスプレイ設定で拡大縮小率が150%になっていたことです。さらに、この設定が影響してブラウザが扱う表示幅に小数点以下の値が生じ、767px以下と768px以上のメディアクエリのどちらにも該当しない幅が発生していた可能性があるとわかりました。</p>
-              <p>参考ページの投稿者は、Windowsのディスプレイ設定を変更することで問題を解決していました。しかし、表示設定を変更するだけでは、別の環境で同じ問題が起きる可能性が残ります。そこで、表示幅に小数点以下の値が含まれていても適切なスタイルが適用されるように、メディアクエリの指定を書き換えることにしました。</p>
-              <p>その結果、767pxで発生していた表示崩れは解消しましたが、今度はメディアクエリをどのように記述するのが適切なのか、という疑問が残りました。小数点以下の値を考慮して指定する方法や、notを使って条件を指定する方法など、いくつかの選択肢が考えられたため、コーディングの先輩に相談してみることにしました。</p>
+              <p>「767pxで表示が崩れる」と検索したところ、teratailに投稿された「<span class="new-window"><a href="https://teratail.com/questions/109137" target="_blank">サイトのデザインがwidth767pxで崩れるのは何故なのか？</a></span>」という質問を見つけました。自分と同じように767pxでレイアウトが崩れるという内容で、回答を読み進めるうちに、今回の問題にも共通する原因があることに気づきました。</p>
+              <p>原因の一つは、Windowsのディスプレイ設定で拡大縮小率が150%になっていたことです。さらに、この設定によってブラウザが扱う表示幅に小数点以下の値が生じ、従来のメディアクエリでは、どちらの条件にも該当しない幅が発生していたことがわかりました。</p>
+              <p>参考ページの投稿者は、Windowsのディスプレイ設定を変更することで問題を解決したとしています。しかし、表示設定を変更するだけでは、別の環境で同じことが起きる可能性が残ります。そこで、表示幅に小数点以下の値が含まれていても適切なスタイルが適用されるように、メディアクエリの指定を書き換えることにしました。</p>
+              <p>その結果、メディアクエリの指定を見直すことで、767pxで発生していた表示崩れを解消できることがわかりました。しかし、今度はメディアクエリをどのように記述するのが適切なのか、という疑問が残ります。小数点以下の値を考慮して指定する方法や、notを使って条件を指定する方法など、いくつかの選択肢が考えられたため、コーディングの先輩に相談してみることにしました。</p>
             </div>
           </section>
 
@@ -109,10 +113,13 @@
             </div>
             <div class="contents__code">
               <div class="contents__code__header">
-                <span class="contents__code__language">CSS</span>
+                <div class="contents__code__language">
+                  <span class="language-css">CSS</span>
+                </div>
                 <button class="contents__code__copy" type="button">コピー</button>
               </div>
-              <pre><code class="language-css">/* デスクトップ向け */
+              <div class="contents__code__wrap language-css">
+                <pre><code>/* デスクトップ向け */
 @media (width >= 768px) {
   /* 画面幅が768px以上のスタイル */
 }
@@ -121,11 +128,17 @@
 @media (width < 768px) {
   /* 画面幅が768px未満のスタイル */
 }</code></pre>
+              </div>
             </div>
             <div class="contents__text">
-              <p>この書き方なら、条件と適用範囲の関係がひと目でわかります。また、notを使った書き方と比べても、画面幅を3つ以上の範囲に分けたい場合に条件を整理しやすく、記述を簡潔にできる点が優れていると感じました。</p>
+              <p>この書き方なら、条件と適用範囲の関係がひと目でわかります。また、notを使った書き方と比べて、画面幅を3つ以上の範囲に分けたい場合に条件を整理しやすく、記述を簡潔にできる点も優れています。実際に、比較演算子を使ったメディアクエリに書き換えたところ、767pxで発生していた表示崩れもきれいに解消できました。</p>
+            </div>
+            <div class="contents__img">
+              <img src="/rat-days/news/img/261030_02.jpg" alt="767pxで発生していた表示崩れが解消した画面" width="800" height="400" loading="lazy">
+            </div>
+            <div class="contents__text">
               <p>ぜひ採用したいと思いましたが、気になったのはブラウザの対応状況です。どれほど便利な構文でも、閲覧者のブラウザで動作しなければ意味がありません。新しい技術を取り入れる際には、使いやすさと互換性のバランスを考える必要があります。</p>
-              <p>そこで先輩が教えてくれたのが、「<span class="contents__link"><a href="https://caniuse.com/" target="_blank">Can I use</a></span>」というWebサイトです。このサイトでは、HTMLやCSS、JavaScriptなどの機能について、ブラウザやバージョンごとの対応状況を確認できます。実際に<span class="contents__link"><a href="https://caniuse.com/css-media-range-syntax" target="_blank">Media Queries: Range Syntaxの対応状況</a></span>を開き、比較演算子を使った構文がどのブラウザで利用できるのかを調べてみました。</p>
+              <p>そこで先輩が教えてくれたのが、「<span class="new-window"><a href="https://caniuse.com/" target="_blank">Can I use</a></span>」というWebサイトです。このサイトでは、HTMLやCSS、JavaScriptなどの機能について、ブラウザやバージョンごとの対応状況を確認できます。実際に<span class="new-window"><a href="https://caniuse.com/css-media-range-syntax" target="_blank">Media Queries: Range Syntaxの対応状況</a></span>を開き、比較演算子を使った構文がどのブラウザで利用できるのかを調べてみました。</p>
             </div>
           </section>
 
@@ -134,7 +147,7 @@
             <div class="contents__text">
               <p>Can I useでは、各ブラウザの対応状況だけでなく、ブラウザの利用シェアをもとに、機能を利用できる環境がどれくらいあるのかも確認できます。未対応のブラウザが存在していても、その利用シェアが十分に小さければ、新しい構文を採用する判断ができると考えました。</p>
               <p>比較演算子を使った構文に対応していないのは、Internet Explorerのほか、古いバージョンのChromeやEdge、Safari、Firefoxなどです。一方、同ページの2026年9月時点の統計では、対応ブラウザの日本国内での利用シェアは約94.36%に達していました。</p>
-              <p>この結果から、未対応の環境は残っているものの、rat daysでは比較演算子を使った新しい構文を採用してもよいと判断しました。新しい技術を取り入れるときには、単に便利そうだからという理由だけで決めるのではなく、ブラウザの対応状況や利用シェアを確認したうえで判断することが大切だと学びました。</p>
+              <p>この結果から、未対応の環境は残っているものの、rat daysでは比較演算子を使った新しい構文を採用してもよいと判断しました。新しい技術を取り入れるときには、単に便利そうだからという理由だけで決めるのではなく、ブラウザの対応状況や利用シェアを確認したうえで判断することが大切だという学びました。</p>
             </div>
           </section>
 
@@ -148,7 +161,7 @@
         </div>
       </div>
 
-      <nav class="article__nav">
+      <nav class="article__nav" aria-label="記事ナビゲーション">
         <ul class="nav__list">
           <li class="nav__item">
             <div class="prev">
