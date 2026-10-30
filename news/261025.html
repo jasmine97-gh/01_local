@@ -20,10 +20,10 @@
 <body>
 <div id="header"></div>
 
-<nav aria-label="パンくずリスト" class="breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
-    <li class="breadcrumb__item"><a href="/rat-days/news/">お知らせ</a></li>
+    <li class="breadcrumb__item"><a href="/rat-days/news/">記事一覧</a></li>
     <li class="breadcrumb__item" aria-current="page">「rat days」を開設しました</li>
   </ol>
 </nav>
@@ -41,7 +41,7 @@
           <h1>「rat days」を<wbr />開設しました</h1>
         </div>
         <div class="subtitle">
-          <p>rat daysでは、ファンシーラットの<wbr />飼育に役立つ情報を発信します</p>
+          <p>rat daysでは、<wbr />ファンシーラットの<wbr />飼育に役立つ情報を<wbr />発信します</p>
         </div>
         <div class="date">
           <p><time datetime="2026-10-25">2026/10/25</time></p>
@@ -92,24 +92,28 @@
         </div>
       </div>
 
-      <nav class="article__nav">
+      <nav class="article__nav" aria-label="記事ナビゲーション">
         <ul class="nav__list">
-          <li class="nav__item prev hidden">
-            <a href="">
-              <p class="nav__lead">前の記事</p>
-              <p class="nav__title"></p>
-            </a>
+          <li class="nav__item">
+            <div class="prev hidden">
+              <a href="">
+                <p class="nav__lead">前の記事</p>
+                <p class="nav__title"></p>
+              </a>
+            </div>
           </li>
-          <li class="nav__item next">
-            <a href="/rat-days/news/26mmdd.html">
-              <p class="nav__lead">次の記事</p>
-              <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-            </a>
+          <li class="nav__item">
+            <div class="next">
+              <a href="/rat-days/news/261030.html">
+                <p class="nav__lead">次の記事</p>
+                <p class="nav__title">767pxで<wbr />レイアウトが<wbr />崩れる問題を<wbr />解決する</p>
+              </a>
+            </div>
           </li>
         </ul>
         <div class="nav__button">
           <a href="/rat-days/news/">
-            <p>お知らせ一覧に戻る</p>
+            <p>記事一覧に戻る</p>
           </a>
         </div>
       </nav>

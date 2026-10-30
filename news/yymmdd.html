@@ -20,7 +20,7 @@
 <body>
 <div id="header"></div>
 
-<nav aria-label="パンくずリスト" class="breadcrumb">
+<nav class="breadcrumb" aria-label="パンくずリスト">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
     <li class="breadcrumb__item"><a href="/rat-days/news/">お知らせ</a></li>
@@ -37,6 +37,9 @@
             <p>=====category=====</p>
           </div>
           <div class="category c-pink">
+            <p>=====category=====</p>
+          </div>
+          <div class="category c-green">
             <p>=====category=====</p>
           </div>
         </div>
@@ -84,6 +87,19 @@
               <p>テキストテキストテキスト</p>
               <p>テキストテキストテキスト</p>
             </div>
+            <div class="contents__code">
+              <div class="contents__code__header">
+                <div class="contents__code__language">
+                  <span class="language-html">HTML</span>
+                  <span class="language-css">CSS</span>
+                  <span class="language-javascript">JavaScript</span>
+                </div>
+                <button class="contents__code__copy" type="button">コピー</button>
+              </div>
+              <div class="contents__code__wrap language-css">
+                <pre><code>コードコードコードコードコードコードコードコードコード</code></pre>
+              </div>
+            </div>
             <div class="contents__img">
               <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
             </div>
@@ -91,19 +107,23 @@
         </div>
       </div>
 
-      <nav class="article__nav">
+      <nav class="article__nav" aria-label="記事ナビゲーション">
         <ul class="nav__list">
-          <li class="nav__item prev">
-            <a href="/rat-days/news/26mmdd.html">
-              <p class="nav__lead">前の記事</p>
-              <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-            </a>
+          <li class="nav__item">
+            <div class="prev">
+              <a href="/rat-days/news/26mmdd.html">
+                <p class="nav__lead">前の記事</p>
+                <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
+              </a>
+            </div>
           </li>
-          <li class="nav__item next hidden">
-            <a href="/rat-days/news/26mmdd.html">
-              <p class="nav__lead">次の記事</p>
-              <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-            </a>
+          <li class="nav__item">
+            <div class="next hidden">
+              <a href="/rat-days/news/26mmdd.html">
+                <p class="nav__lead">次の記事</p>
+                <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
+              </a>
+            </div>
           </li>
         </ul>
         <div class="nav__button">
