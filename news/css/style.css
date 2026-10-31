@@ -149,6 +149,17 @@ button {
 .new-window {
   color: var(--c-accent);
 }
+.new-window::after {
+  content: "";
+  display: inline-block;
+  vertical-align: -0.1em;
+  background-image: url("/rat-days/img/new-window_sub.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 1em;
+  height: 1em;
+}
 
 @media (width >= 768px) {
   #header {
