@@ -28,113 +28,112 @@
   </ol>
 </nav>
 
-<div class="article__wrap">
-  <main>
-    <article>
-      <div class="article__head">
-        <div class="category__wrap">
-          <div class="category c-blue">
-            <p>=====category=====</p>
-          </div>
-          <div class="category c-pink">
-            <p>=====category=====</p>
-          </div>
-          <div class="category c-green">
-            <p>=====category=====</p>
-          </div>
-        </div>
-        <div class="title">
-          <h1>=====title=====<wbr /></h1>
-        </div>
-        <div class="subtitle">
-          <p>=====subtitle=====<wbr /></p>
-        </div>
-        <div class="date">
-          <p><time datetime="2026-mm-dd">2026/mm/dd</time></p>
-        </div>
+<main>
+  <article class="article">
+    <div class="article__head">
+      <div class="category">
+        <ul class="category__list">
+          <li class="category__item c-blue">=====category=====</li>
+          <li class="category__item c-pink">=====category=====</li>
+          <li class="category__item c-green">=====category=====</li>
+        </ul>
       </div>
-
-      <div class="article__body">
-        <div class="contents__wrap">
-          <section class="contents__block">
-            <h2 class="contents__h2-title">テキストテキストテキスト</h2>
-            <div class="contents__text">
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-            </div>
-            <div class="contents__img">
-              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400">
-            </div>
-          </section>
-
-          <section class="contents__block">
-            <h2 class="contents__h2-title">テキストテキストテキスト</h2>
-            <div class="contents__text">
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-            </div>
-            <div class="contents__img">
-              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
-            </div>
-          </section>
-
-          <section class="contents__block">
-            <h2 class="contents__h2-title">テキストテキストテキスト</h2>
-            <div class="contents__text">
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-              <p>テキストテキストテキスト</p>
-            </div>
-            <div class="contents__code">
-              <div class="contents__code__header">
-                <div class="contents__code__language">
-                  <span class="language-html">HTML</span>
-                  <span class="language-css">CSS</span>
-                  <span class="language-javascript">JavaScript</span>
-                </div>
-                <button class="contents__code__copy" type="button">コピー</button>
-              </div>
-              <div class="contents__code__wrap language-css">
-                <pre><code>コードコードコードコードコードコードコードコードコード</code></pre>
-              </div>
-            </div>
-            <div class="contents__img">
-              <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
-            </div>
-          </section>
-        </div>
+      <div class="title">
+        <h1>=====title=====<wbr /></h1>
       </div>
+      <div class="subtitle">
+        <p>=====subtitle=====<wbr /></p>
+      </div>
+      <div class="date">
+        <ul class="date__list">
+          <li class="date__item"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 公開</li>
+          <li class="date__item hidden"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 更新</li>
+        </ul>
+      </div>
+    </div>
 
-      <nav class="article__nav" aria-label="記事ナビゲーション">
-        <ul class="nav__list">
-          <li class="nav__item">
+    <div class="article__body">
+      <div class="contents">
+        <section class="contents__block">
+          <h2 class="contents__h2-title">テキストテキストテキスト</h2>
+          <div class="contents__text">
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+          </div>
+          <div class="contents__img">
+            <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400">
+          </div>
+        </section>
+
+        <section class="contents__block">
+          <h2 class="contents__h2-title">テキストテキストテキスト</h2>
+          <div class="contents__text">
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+          </div>
+          <div class="contents__img">
+            <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
+          </div>
+        </section>
+
+        <section class="contents__block">
+          <h2 class="contents__h2-title">テキストテキストテキスト</h2>
+          <div class="contents__text">
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキスト</p>
+          </div>
+          <div class="contents__code">
+            <div class="contents__code__header">
+              <div class="contents__code__language">
+                <span class="language-html">HTML</span>
+                <span class="language-css">CSS</span>
+                <span class="language-javascript">JavaScript</span>
+              </div>
+              <button class="contents__code__copy" type="button">コピー</button>
+            </div>
+            <div class="contents__code__block language-css">
+              <pre><code>コードコードコードコードコードコードコードコードコード</code></pre>
+            </div>
+          </div>
+          <div class="contents__img">
+            <img src="https://placehold.co/800x400/3478F6/FFFFFF.png" alt="" width="800" height="400" loading="lazy">
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <nav class="article__post-nav" aria-label="記事ナビゲーション">
+      <div class="post-nav">
+        <ul class="post-nav__list">
+          <li class="post-nav__item">
             <div class="prev">
               <a href="/rat-days/news/26mmdd.html">
-                <p class="nav__lead">前の記事</p>
-                <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
+                <p class="post-nav__lead">前の記事</p>
+                <p class="post-nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
               </a>
             </div>
           </li>
-          <li class="nav__item">
+          <li class="post-nav__item">
             <div class="next hidden">
               <a href="/rat-days/news/26mmdd.html">
-                <p class="nav__lead">次の記事</p>
-                <p class="nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
+                <p class="post-nav__lead">次の記事</p>
+                <p class="post-nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
               </a>
             </div>
           </li>
         </ul>
-        <div class="nav__button">
-          <a href="/rat-days/news/">
-            <p>お知らせ一覧に戻る</p>
-          </a>
-        </div>
-      </nav>
-    </article>
-  </main>
-</div>
+      </div>
+      <div class="post-nav__button">
+        <a href="/rat-days/news/">
+          <p>お知らせ一覧に戻る</p>
+        </a>
+      </div>
+    </nav>
+  </article>
+</main>
 
 <div id="footer"></div>
 
