@@ -25,6 +25,7 @@
   // 言語別フォーマッタ
   "[html]": {
     "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // HTMLファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
+    "editor.formatOnSave": true, // 保存時整形する。
   },
   "[css]": {
     "editor.defaultFormatter": "vsce-toolroom.vscode-beautify", // CSSファイルのデフォルトフォーマッタとして、Beautify拡張機能を使用するように設定。
@@ -229,6 +230,7 @@
   "editor.formatOnPaste": true, // 貼り付け時整形
   "editor.formatOnSave": false, // 保存時整形しない
   "editor.guides.bracketPairs": true, // 括弧ガイド表示
+  "editor.hover.enabled": "off", // MDN Reference非表示
   "editor.mouseWheelZoom": true, // Ctrl+ホイールでズーム
   "editor.renderWhitespace": "all", // 空白を可視化
   "editor.tabSize": 2, // タブ幅2
